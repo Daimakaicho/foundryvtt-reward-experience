@@ -1,14 +1,7 @@
 'use strict';
-export class CombatManager {
-    constructor() {
-        this.MODULE_ID = "foundryvtt-reward-experience";
-        this.MODULE_NAME = "Reward Experience";
-        this.LEVELUP_CARD_TEMPLATE = "levelup-card";
-        this.REWARD_EXPERIENCE_CARD_TEMPLATE = "reward-experience-card";
-        this.TEMPLATES_EXTENSION = "hbs";
-        this.TEMPLATES_PATH = `/modules/${MODULE_ID}/templates`;
-    }
+import { TEMPLATES_PATH, REWARD_EXPERIENCE_CARD_TEMPLATE, TEMPLATES_EXTENSION, LEVELUP_CARD_TEMPLATE } from './cnofig.js'
 
+export class CombatManager {
     static _onEndCombat(combatData) {
         if (!game.user.isGM) return;
 
@@ -90,8 +83,8 @@ export class CombatManager {
      *
      * @return {Promise}
      */
-    async notifyExperienceReward(user, experienceAmount) {
-        return renderTemplate(`${this.TEMPLATES_PATH}/${this.REWARD_EXPERIENCE_CARD_TEMPLATE}.${this.TEMPLATES_EXTENSION}`, {
+    async _notifyExperienceReward(user, experienceAmount) {
+        return renderTemplate(`${TEMPLATES_PATH}/${REWARD_EXPERIENCE_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`, {
             experience: experienceAmount
         }).then(content => {
             ChatMessage.create({
@@ -111,8 +104,8 @@ export class CombatManager {
      *
      * @return {Promise}
      */
-    async notifyLevelUp(user) {
-        return renderTemplate(`${this.TEMPLATES_PATH}/${this.LEVELUP_CARD_TEMPLATE}.${this.TEMPLATES_EXTENSION}`, {
+    async _notifyLevelUp(user) {
+        return renderTemplate(`${TEMPLATES_PATH}/${LEVELUP_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`, {
             experience: experienceAmount
         }).then(content => {
             ChatMessage.create({

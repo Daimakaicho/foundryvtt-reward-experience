@@ -1,4 +1,5 @@
 'use strict';
+import { MODULE_ID } from './config.js'
 import { libWrapper } from './shim/shim.js'
 import { CombatManager } from "./CombatManager.js"
 
