@@ -1,12 +1,12 @@
 {
-  "name": "reward-experience",
+  "name": "foundryvtt-reward-experience",
   "title": "Reward Experience",
   "description": "A very simple module to automatically reward experience to players when combat ends. Also notify for level up.",
-  "version": "1.1.2",
+  "version": "0.0.1",
   "author": "Daimakaicho",
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.8.7",
-  "esmodules": ["scripts/reward-experience.js"],
+  "esmodules": ["scripts/foundryvtt-reward-experience.js"],
   "dependencies": [
     {
       "name": "lib-wrapper",
@@ -17,12 +17,12 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "languages/en.json"
     },
     {
       "lang": "fr",
       "name": "Français",
-      "path": "lang/fr.json"
+      "path": "languages/fr.json"
     }
   ],
   "styles": ["styles/main.css"],
