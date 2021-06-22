@@ -5,6 +5,9 @@ import { CombatManager } from "./CombatManager.js"
 
 export class Signal {
     static lightUp() {
+
+        const combatManager = new CombatManager();
+
         /**
          * Registers hooks
          */
@@ -31,7 +34,7 @@ export class Signal {
 
             // We handle endCombat() call
             Hooks.on("endCombat", (combatData) => {
-                CombatManager._onCombatEnd(combatData);
+                combatManager._onEndCombat(combatData);
             });
             console.log(`${MODULE_ID} | module initialised.`);
         });

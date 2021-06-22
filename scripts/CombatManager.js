@@ -2,7 +2,7 @@
 import { TEMPLATES_PATH, REWARD_EXPERIENCE_CARD_TEMPLATE, TEMPLATES_EXTENSION, LEVELUP_CARD_TEMPLATE } from './config.js'
 
 export class CombatManager {
-    static _onEndCombat(combatData) {
+    _onEndCombat(combatData) {
         if (!game.user.isGM) return;
 
         if (combatData === undefined) {
@@ -92,16 +92,15 @@ export class CombatManager {
      * @return {Promise}
      */
     async _notifyLevelUp(user) {
-        return renderTemplate(`${TEMPLATES_PATH}/${LEVELUP_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`, {
-            experience: experienceAmount
-        }).then(content => {
-            ChatMessage.create({
-                type: CONST.CHAT_MESSAGE_TYPES.WHISPER,
-                user: game.user.id,
-                speaker: undefined,
-                whisper: [user.id],
-                content: content
+        return renderTemplate(`${TEMPLATES_PATH}/${LEVELUP_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`)
+            .then(content => {
+                ChatMessage.create({
+                    type: CONST.CHAT_MESSAGE_TYPES.WHISPER,
+                    user: game.user.id,
+                    speaker: undefined,
+                    whisper: [user.id],
+                    content: content
+                });
             });
-        });
     }
 }
