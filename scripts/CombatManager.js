@@ -31,8 +31,7 @@ export class CombatManager {
         // If monsters give so fex experience that rounded per charecter is 0, we won't go further
         if (characterExperience === 0) return;
 
-
-        players.forEach(player => {
+        for (const player of players) {
             // Getting some player's experience data
             const playerExperienceData = player.actor.data.data.details.xp;
             const currentExperience = playerExperienceData.value;
@@ -60,19 +59,7 @@ export class CombatManager {
                     this._notifyLevelUp(player);
                 }
             });
-        });
-    }
-
-    /**
-     * Loads templates based on module's configuration.
-     *
-     * @param {string} templateName     The name of the target HTML template
-     * @param {Object} data             A data object against which to compile the template
-     *
-     * @return {Promise<Object>}        Returns the rendered HTML
-     */
-    async loadTemplate(templateName, data) {
-        return renderTemplate(`${TEMPLATES_PATH}/${templateName}.${TEMPLATES_EXTENSION}`, data)
+        }
     }
 
     /**
