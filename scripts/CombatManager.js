@@ -10,7 +10,7 @@ export class CombatManager {
             return;
         }
 
-        const monsters = combatData.data.combatants.filter(x => x.actor.data.type === "npc");
+        const monsters = combatData.data.combatants.filter(x => !x.actor.hasPlayerOwner);
         if (!monsters || monsters.length === 0) {
             ui.notifications.warn(game.i18n.localize("reward-experience.error.no-monsters-in-combat"));
             return;
@@ -21,7 +21,7 @@ export class CombatManager {
         if (totalExperience === 0) return;
 
 
-        const players = combatData.data.combatants.filter(x => x.actor.data.type === "character");
+        const players = combatData.data.combatants.filter(x => x.actor.hasPlayerOwner);
         if (!players || players.length === 0) {
             ui.notifications.warn(game.i18n.localize("reward-experience.error.no-players-in-combat"));
             return;
