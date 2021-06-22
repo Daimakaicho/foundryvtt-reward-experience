@@ -1,5 +1,5 @@
 'use strict';
-import { TEMPLATES_PATH, REWARD_EXPERIENCE_CARD_TEMPLATE, TEMPLATES_EXTENSION, LEVELUP_CARD_TEMPLATE } from './cnofig.js'
+import { TEMPLATES_PATH, REWARD_EXPERIENCE_CARD_TEMPLATE, TEMPLATES_EXTENSION, LEVELUP_CARD_TEMPLATE } from './config.js'
 
 export class CombatManager {
     static _onEndCombat(combatData) {
