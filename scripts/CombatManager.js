@@ -70,7 +70,7 @@ export class CombatManager {
      *
      * @return {Promise}
      */
-    async _notifyExperienceReward(user, experienceAmount) {
+    async _notifyExperienceReward(combatant, experienceAmount) {
         return renderTemplate(`${TEMPLATES_PATH}/${REWARD_EXPERIENCE_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`, {
             experience: experienceAmount
         }).then(content => {
@@ -78,7 +78,7 @@ export class CombatManager {
                 type: CONST.CHAT_MESSAGE_TYPES.WHISPER,
                 user: game.user.id,
                 speaker: undefined,
-                whisper: [user.id],
+                whisper: combatant.players.map(x => x.id),
                 content: content
             });
         });
@@ -91,14 +91,14 @@ export class CombatManager {
      *
      * @return {Promise}
      */
-    async _notifyLevelUp(user) {
+    async _notifyLevelUp(combatant) {
         return renderTemplate(`${TEMPLATES_PATH}/${LEVELUP_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`)
             .then(content => {
                 ChatMessage.create({
                     type: CONST.CHAT_MESSAGE_TYPES.WHISPER,
                     user: game.user.id,
                     speaker: undefined,
-                    whisper: [user.id],
+                    whisper: combatant.players.map(x => x.id),
                     content: content
                 });
             });
