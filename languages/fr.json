@@ -1,0 +1,8 @@
+{
+    "reward-experience.experience-reward-header": "Expérience",
+    "reward-experience.experience-short-name": "XP",
+    "reward-experience.levelup-header": "Gain de niveau !",
+    "reward-experience.warning.no-active-combat": "Il n'y a pas de combat en cours !",
+    "reward-experience.error.no-monsters-in-combat": "Il n'y a aucun monstre dans le combat !",
+    "reward-experience.error.no-players-in-combat": "Il n'y a aucun joueur dans le combat !"
+}
