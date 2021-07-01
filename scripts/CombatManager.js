@@ -71,6 +71,8 @@ export class CombatManager {
      * @return {Promise}
      */
     async _notifyExperienceReward(combatant, experienceAmount) {
+        if (!game.user.isGM) return;
+
         return renderTemplate(`${TEMPLATES_PATH}/${REWARD_EXPERIENCE_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`, {
             experience: experienceAmount
         }).then(content => {
@@ -92,6 +94,8 @@ export class CombatManager {
      * @return {Promise}
      */
     async _notifyLevelUp(combatant) {
+        if (!game.user.isGM) return;
+
         return renderTemplate(`${TEMPLATES_PATH}/${LEVELUP_CARD_TEMPLATE}.${TEMPLATES_EXTENSION}`)
             .then(content => {
                 ChatMessage.create({
