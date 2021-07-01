@@ -1,0 +1,12 @@
+<h1>{{ localize 'reward-experience.dialog.title' }}</h1>
+<p><b>{{ localize 'reward-experience.dialog.total-xp' }}</b> {{ totalExperience }}</p>
+<p><b>{{ localize 'reward-experience.dialog.total-per-character' }}</b> {{ characterExperience }}</p>
+<br/>
+<label>{{ localize 'reward-experience.dialog.player-list-header' }}</label>
+<ul>
+    {{#each players}}
+    <li data-id="{{ this.id }}">{{ this.actor.data.name }}</li>
+    {{/each}}
+</ul>
+<br/>
+<p>{{ localize 'reward-experience.dialog.text' }}</p>

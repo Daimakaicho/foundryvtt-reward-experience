@@ -4,5 +4,12 @@
     "reward-experience.levelup-header": "Level up!",
     "reward-experience.warning.no-active-combat": "No active combat !",
     "reward-experience.error.no-monsters-in-combat": "No monsters in combat !",
-    "reward-experience.error.no-players-in-combat": "No players in combat !"
+    "reward-experience.error.no-players-in-combat": "No players in combat !",
+    "reward-experience.dialog.title": "Reward Experience",
+    "reward-experience.dialog.total-xp":"Total experience:",
+    "reward-experience.dialog.total-per-character":"Player experience:",
+    "reward-experience.dialog.player-list-header":"Following players will be rewarded with experience points:",
+    "reward-experience.dialog.text": "Do you wish to reward players with experience points ?",
+    "reward-experience.dialog.buttons.confirm": "Yes",
+    "reward-experience.dialog.buttons.cancel": "No"
 }
