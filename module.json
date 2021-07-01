@@ -1,7 +1,7 @@
 {
   "name": "foundryvtt-reward-experience",
   "title": "Reward Experience",
-  "description": "A very simple module to automatically reward experience to players when combat ends. Also notify for level up.",
+  "description": "A very simple module to automatically reward experience to players when combat ends. Also notify for level up. A confirmation is now displayed before rewarding experience to give more control to GM.",
   "version": "0.0.1",
   "author": "Daimakaicho",
   "minimumCoreVersion": "0.7.9",
