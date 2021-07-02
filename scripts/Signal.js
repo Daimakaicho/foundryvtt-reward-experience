@@ -4,7 +4,7 @@ import { libWrapper } from './shim/shim.js'
 import { CombatManager } from "./CombatManager.js"
 
 export class Signal {
-        static lightUp() {
+    static lightUp() {
 
         /**
          * Registers hooks
@@ -22,21 +22,12 @@ export class Signal {
         Hooks.once('ready', () => {
             this.combatManager = new CombatManager();
 
-            /*
-            if (isNewerVersion(game.data.version, LATEST_TESTED_VERSION)) {
-                ChatMessage.create({
-                    type: CONST.CHAT_MESSAGE_TYPES.WHISPER,
-                    users: ChatMessage.getWhisperRecipients("GM"),
-                    content: `<p>'${MODULE_NAME}' is not tested with newer version than ${LATEST_TESTED_VERSION}. Please be careful !</p>`              
-                });
-            }
-            */
-
             // We handle endCombat() call
             Hooks.on("endCombat", (combatData) => {
                 this.combatManager._onEndCombat(combatData);
             });
             console.log(`${MODULE_ID} | module initialised.`);
         });
+
     }
 }
