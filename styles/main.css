@@ -3,7 +3,19 @@
     display: inline;
 }
 
-.grid-container  {
-    display: grid;
-    grid-template-columns: auto auto; 
+ul.player-list {
+    list-style-type: none;
+}
+
+ul.player-list li {
+    display:block; 
+    height:48px;
+    line-height:48px;
+}
+
+ul.player-list li img {
+    border:none;
+    width:48px;
+    height:48px;
+    vertical-align:middle;
 }
